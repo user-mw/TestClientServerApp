@@ -51,7 +51,7 @@ public class FirstFragment extends BaseFragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         FirstBinding currentBinding = FirstBinding.inflate(inflater, container, false);
         currentBinding.setCurrentViewModel(mViewModel);
-        currentBinding.setLifecycleOwner(this);
+        //currentBinding.setLifecycleOwner(this);
         return currentBinding.getRoot();
     }
 
