@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data class="SecondBinding">
+
+        <import
+            alias="currentView"
+            type="android.view.View" />
+
+        <variable
+            name="currentViewModel"
+            type="ru.workout.testclientserverapp.ui.second_screen.SecondViewModel"/>
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/default_error_text"
+            android:textColor="@color/textColorError"
+            android:textSize="32sp"
+            android:visibility="@{currentViewModel.isError ? currentView.VISIBLE : currentView.GONE}"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="15dp"
+            android:visibility="@{currentViewModel.isError ? currentView.GONE : currentView.VISIBLE}">
+
+            <TextView
+                android:id="@+id/car_brand"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textSize="22sp"
+                android:text="@{currentViewModel.carBrand}"/>
+
+            <TextView
+                android:id="@+id/car_model"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:text="@{currentViewModel.carModel}"/>
+
+            <TextView
+                android:id="@+id/car_year"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textSize="24sp"
+                android:text="@{currentViewModel.carYear}"/>
+
+            <TextView
+                android:id="@+id/car_color"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textSize="22sp"
+                android:text="@{currentViewModel.carColor}"/>
+
+            <TextView
+                android:id="@+id/car_cost"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textSize="22sp"
+                android:textStyle="italic"
+                android:text="@{currentViewModel.carCost}"/>
+
+        </LinearLayout>
+    </FrameLayout>
+</layout>
