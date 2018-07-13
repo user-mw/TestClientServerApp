@@ -21,9 +21,7 @@ import ru.workout.testclientserverapp.ui.second_screen.SecondFragment;
 public class FirstFragment extends BaseFragment {
 
     private CarsAdapter.ICustomItemClickListener mClickListener =
-            carId -> {
-                changeFragment(SecondFragment.newInstance(carId));
-            };
+            carId -> changeFragment(SecondFragment.newInstance(carId));
 
     @Inject
     FirstViewModel mViewModel;
